@@ -148,8 +148,8 @@ with block:
         gr.Markdown(MARKDOWN)
     with gr.Row():
         with gr.Column():
-            input_image = gr.Image(source="upload", type="pil")
-            run_button = gr.Button(label="Run")
+            input_image = gr.Image(type="pil")
+            run_button = gr.Button("Run")
             with gr.Accordion("Options", open=True):
                 tile_diffusion = gr.Checkbox(label="Tile diffusion", value=False)
                 tile_diffusion_size = gr.Slider(label="Tile diffusion size", minimum=512, maximum=1024, value=512,
@@ -176,8 +176,7 @@ with block:
                 use_color_fix = gr.Checkbox(label="Use Color Correction", value=True)
                 seed = gr.Slider(label="Seed", minimum=-1, maximum=2147483647, step=1, value=231)
         with gr.Column():
-            result_gallery = gr.Gallery(label="Output", show_label=False, elem_id="gallery").style(grid=2,
-                                                                                                   height="auto")
+            result_gallery = gr.Gallery(label="Output", show_label=False, elem_id="gallery", height="auto")
 
     inputs = [
         input_image,
