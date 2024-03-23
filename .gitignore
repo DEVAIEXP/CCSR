@@ -1,6 +1,5 @@
 .vs/
 .vscode/
-.idea/
 __pycache__/
 ldm/__pycache__/
 ldm/model/__pycache__/
