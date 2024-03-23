@@ -29,6 +29,7 @@ if args.device == "cpu":
 model: ControlLDM = instantiate_from_config(OmegaConf.load(args.config))
 load_state_dict(model, torch.load(args.ckpt, map_location="cpu"), strict=True)
 model.freeze()
+model.half()
 model.to(args.device)
 # load sampler
 sampler = SpacedSampler(model, var_type="fixed_small")
